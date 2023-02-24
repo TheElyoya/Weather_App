@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://source.unsplash.com/random/?landscape/");
+  background-size: cover;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 85%);
+  color: white;
+  padding: 35px;
+  border-radius: 35px;
+  width: 100%;
+  max-width: 450px;
+  margin: 10px;
+  height: fit-content;
+  position: relative;
+}
+
+.card.loading::after {
+  content: "Loading ...";
+  position: absolute;
+  top: 50%;
+  transform: translateY(220%);
+  margin-left: 15px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search .search-bar {
+  background-color: #7c7c7c2b;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  width: calc(100% - 40px);
+  color: white;
+  border-radius: 40px;
+  font-size: 18px;
+}
+.search .search-bar::placeholder {
+  transition: 500ms ease-in-out;
+}
+
+.search .search-bar:focus::placeholder {
+  opacity: 0;
+}
+.search button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  height: 41px;
+  width: 41px;
+  border-radius: 50%;
+  margin-left: 15px;
+  background-color: #6d6c6c2b;
+  color: white;
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+}
+
+.search button:hover {
+  background-color: #9696962b;
+}
+
+.city {
+  margin: 20px 5px;
+}
+.temp {
+  margin: 20px 5px;
+}
+
+.description,
+.humidity,
+.wind {
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.temp.loading,
+.wheater.loading {
+  display: none;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
